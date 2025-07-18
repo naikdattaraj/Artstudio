@@ -1,0 +1,193 @@
+:root {
+  --primary-bg: black;
+  --card-bg: dimgray;
+  --highlight: deepskyblue;
+  --text-color: white;
+  --border-color: gray;
+  --font: 'Inter', sans-serif;
+}
+
+body {
+  background: var(--primary-bg);
+  color: var(--text-color);
+  font-family: var(--font);
+  margin: 0;
+  padding: 0;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: black;
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+header p {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.theme-toggle {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  background: var(--highlight);
+  border: none;
+  color: var(--text-color);
+  padding: 0.6em 1em;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+main {
+  padding: 2rem 1rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  color: var(--highlight);
+}
+
+.canvas-area,
+.upload-section,
+.curated-gallery {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 8px darkgray;
+}
+
+canvas {
+  background-color: gray;
+  display: block;
+  margin: 1rem auto;
+  border-radius: 1rem;
+  max-width: 100%;
+  box-shadow: 0 0 6px var(--highlight);
+}
+
+.canvas-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+input[type="file"],
+button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  background: var(--highlight);
+  border: none;
+  color: black;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover,
+input[type="file"]:hover {
+  background: lightblue;
+  color: black;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.art-piece,
+.uploaded-art {
+  background: gray;
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center;
+  min-width: 100px;
+  flex: 0 1 150px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.art-piece:hover,
+.uploaded-art:hover {
+  transform: scale(1.05);
+  background-color: silver;
+  box-shadow: 0 0 6px var(--highlight);
+}
+
+.uploaded-art {
+  max-height: 100px;
+  object-fit: contain;
+}
+
+/* Accessibility: visually hidden label */
+.visually-hidden {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: lightgray;
+  margin: 2rem 0;
+}
+
+/* Light theme overrides */
+body.light-theme {
+  --primary-bg: white;
+  --card-bg: white;
+  --highlight: royalblue;
+  --text-color: black;
+  --border-color: darkgray;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  .canvas-controls {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  input[type="file"],
+  button {
+    width: 100%;
+  }
+
+  .gallery {
+    gap: 0.6rem;
+  }
+
+  .art-piece,
+  .uploaded-art {
+    flex: 0 1 100px;
+  }
+}

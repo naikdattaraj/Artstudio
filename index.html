@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ArtStudio – Interactive Gallery</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <h1>🎨 ArtStudio – Interactive Gallery</h1>
+    <p>Create. Upload. Explore.</p>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙 Toggle Theme</button>
+  </header>
+
+  <main>
+    <!-- 🎨 Canvas Playground -->
+    <section class="canvas-area">
+      <h2>Canvas Playground</h2>
+      <canvas id="art-canvas" width="500" height="300" aria-label="Drawing canvas"></canvas>
+      <div class="canvas-controls">
+        <button id="draw-toggle" aria-label="Toggle drawing mode">✏️ Start Drawing</button>
+        <button id="save-btn" aria-label="Save canvas artwork">💾 Save Artwork</button>
+      </div>
+    </section>
+
+    <!-- 🖼️ Upload Section -->
+    <section class="upload-section">
+      <h2>Upload Your Art</h2>
+      <label for="upload" class="visually-hidden">Choose an image to upload</label>
+      <input type="file" id="upload" accept="image/*" />
+      <div id="uploaded-gallery" class="gallery" aria-live="polite"></div>
+    </section>
+
+    <!-- 🌟 Curated Gallery -->
+    <section class="curated-gallery">
+      <h2>Featured Gallery</h2>
+      <div class="gallery">
+        <button class="art-piece" onclick="favoriteArt(1)">🌈 Color Burst</button>
+        <button class="art-piece" onclick="favoriteArt(2)">🌟 Star Light</button>
+        <button class="art-piece" onclick="favoriteArt(3)">🌀 Spiral Flow</button>
+      </div>
+      <button onclick="showFavorites()" aria-label="Show favorite artworks">⭐ Show Favorites</button>
+    </section>
+  </main>
+
+  <footer>
+  <p>© 2025 Dattaraj Naik. All rights reserved.</p>
+</footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
