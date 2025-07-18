@@ -2,7 +2,7 @@
   --primary-bg: black;
   --card-bg: dimgray;
   --highlight: deepskyblue;
-  --text-color: white;
+  --text-color: rgb(203, 48, 48);
   --border-color: gray;
   --font: 'Inter', sans-serif;
 }
@@ -16,13 +16,27 @@ body {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
+body.light-theme {
+  --primary-bg: white;
+  --card-bg: white;
+  --highlight: royalblue;
+  --text-color: black;
+  --border-color: darkgray;
+}
+
+/* 🧠 Header styling */
 header {
   text-align: center;
   padding: 2rem 1rem;
-  background: black;
+  background: var(--primary-bg);
   border-bottom: 1px solid var(--border-color);
   position: relative;
-  color: var(--text-color); 
+}
+
+header h1,
+header p {
+  color: var(--text-color);
+  transition: color 0.3s ease;
 }
 
 header h1 {
@@ -41,7 +55,7 @@ header p {
   top: 1em;
   background: var(--highlight);
   border: none;
-  color: var(--text-color);
+  color: blueviolet;
   padding: 0.6em 1em;
   border-radius: 8px;
   cursor: pointer;
@@ -158,16 +172,7 @@ footer {
   margin: 2rem 0;
 }
 
-/* Light theme overrides */
-body.light-theme {
-  --primary-bg: white;
-  --card-bg: white;
-  --highlight: royalblue;
-  --text-color: black;
-  --border-color: darkgray;
-}
-
-/* Responsive tweaks */
+/* 📱 Responsive tweaks */
 @media (max-width: 600px) {
   header h1 {
     font-size: 1.4rem;
