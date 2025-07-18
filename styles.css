@@ -22,6 +22,7 @@ header {
   background: black;
   border-bottom: 1px solid var(--border-color);
   position: relative;
+  color: var(--text-color); 
 }
 
 header h1 {
